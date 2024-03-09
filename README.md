@@ -6,8 +6,8 @@ Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de poi
 ## Prérequis
 ### Il est condidéré que vous avez pour 
 - installé Proxmox
-- intallé HA
-- intallé les add-ons suivants : HAOS, Mosquitto browser
+- intallé HAOS
+- intallé les add-ons suivants : HACS, Mosquitto browser
 - mis en place votre accès extérieur : pour ma part avec les add-ons DuckDNS et NGINX  
 - testé vos caméras avec le protocole rtsp ou onvif (ou autre mais je n'ai pas testé)
 ### Déroulé du tutoriel :
