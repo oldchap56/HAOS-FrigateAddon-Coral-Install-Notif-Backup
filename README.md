@@ -13,8 +13,8 @@ Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de poi
 ### Déroulé du tutoriel :
 - Branchement de Coral dans la VM HAOS
 - Installation de Frigate add-on
-- Intégration de Frigate (hé oui c'est différent, j'ai eu du mal à comprendre ça)
 - Construction de la Configuration Frigate
+- Intégration de Frigate (hé oui c'est différent, j'ai eu du mal à comprendre ça)
 - Téléchargement de l’add-on “rclone backup” qui va servir à exporter les photos et vidéos de personnes dans google-drive
 - Construction d’une Automatisation pour relancer l’add-on ‘Rclone backup) dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite après l’action
 - Configuration des notifications à l’aide du blueprint de SgtBatten
@@ -43,9 +43,18 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 
 ## 2. Installation de Frigate add-on
 
-- Dans votre Home Assistant, allez dans Paramètres, Modules complémentaires, Boutique des modules, puis cliquez en haut à droire pour ajouter un nouveau répertoire d'Add-ons et ajoutez ce lien https://github.com/blakeblackshear/frigate-hass-addons à la liste.
+- Dans votre Home Assistant, allez dans Paramètres, Modules complémentaires, Boutique des modules, puis cliquez en haut à droire pour ajouter un nouveau répertoire d'Add-ons et ajoutez ce lien https://github.com/blakeblackshear/frigate à la liste.
 - Redémarrez Home Assistant
+- Allez dans Paramétres, Modules complémentaires, Boutique des modules complémentaires (en bas pour moi), recherchez Frigate et cliquez sur Frigate, suivez les indications en indiquant que vous le faîtes tourné sur HAOS (par défaut le nom sera 
+- Revenez dans Paramètres, Modules complémentaires et cochez "Afficher dans la barre latérale"
+- A partir de ce moment vous pourrez configurer Fritage.
+
 - 
 
+## Construction de la Configuration Frigate
+Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), 
+
+  
 ## 3. Intégration de Frigate
 
+https://github.com/blakeblackshear/frigate-hass-integration
