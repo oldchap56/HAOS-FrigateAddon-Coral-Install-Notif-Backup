@@ -11,6 +11,16 @@ Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de poi
 - mis en place votre accès extérieur : pour ma part avec les add-ons DuckDNS et NGINX  
 - testé vos caméras avec le protocole rtsp ou onvif (ou autre mais je n'ai pas testé)
 ### Déroulé du tutoriel :
-- installation de Frigate add-on
-- intégration de Frigate (hé oui c'est différent, j'ai eu du mal à comprendre ça)
-- 
+- Branchement de Coral dans la VM HAOS
+- Installation de Frigate add-on
+- Intégration de Frigate (hé oui c'est différent, j'ai eu du mal à comprendre ça)
+- Construction de la Configuration Frigate
+- Téléchargement de l’add-on “rclone backup” qui va servir à exporter les photos et vidéos de personnes dans google-drive
+- Construction d’une Automatisation pour relancer l’add-on ‘Rclone backup) dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite après l’action
+- Configuration des notifications à l’aide du blueprint de SgtBatten
+- Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
+- Ajout dans Alarmo de 2 actions liées aux alarmes : 
+  - activation des détections caméras si Alarme armée (sert à faire des essais quand on veut)
+  - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
+## Branchement de Coral dansla VM HAOS
+
