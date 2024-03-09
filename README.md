@@ -43,3 +43,9 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 
 ## 2. Installation de Frigate add-on
 
+- Dans votre Home Assistant, allez dans Paramètres, Modules complémentaires, Boutique des modules, puis cliquez en haut à droire pour ajouter un nouveau répertoire d'Add-ons et ajoutez ce lien https://github.com/blakeblackshear/frigate-hass-addons à la liste.
+- Redémarrez Home Assistant
+- 
+
+## 3. Intégration de Frigate
+
