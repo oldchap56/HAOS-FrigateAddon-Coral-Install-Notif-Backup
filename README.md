@@ -22,7 +22,7 @@ Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de poi
 - Ajout dans Alarmo de 2 actions liées aux alarmes : 
   - activation des détections caméras si Alarme armée (sert à faire des essais quand on ve
   - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
-## Branchement de Coral dansla VM HAOS
+## Branchement de Coral dans la VM HAOS
 Il y a de multiples tutoriels sur "Comment faire en sorte d'accéder à Coral depuis Frigate", toutes basées sur l'intégration à partir du numéro du port USB.
 Ici je vous montre une méthode qui habituellement n'est pas usitée, car j'ai préféré utiliser faire une intégration à partir du nom ou de l'ID du composant Coral, en particulier car je ne suis pas un pro de Linux donc j'avais des difficultés à repérer le port USB, l'intégrer à travers l'interface Proxmox, etc.
 Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directement sur votre ordi (pour ma part un NUC), il faut :
