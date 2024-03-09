@@ -41,5 +41,5 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 
     ![Coral dans VM HAOS](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/219aca98-1129-495c-9c5b-67719a8e3805)
 
-
+## 2. Installation de Frigate add-on
 
