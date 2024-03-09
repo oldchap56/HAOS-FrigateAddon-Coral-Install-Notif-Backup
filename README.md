@@ -25,7 +25,7 @@ Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de poi
 ## Branchement de Coral dans la VM HAOS
 Il y a de multiples tutoriels sur "Comment faire en sorte d'accéder à Coral depuis Frigate", toutes basées sur l'intégration à partir du numéro du port USB.
 Ici je vous montre une méthode qui habituellement n'est pas usitée, car j'ai préféré utiliser faire une intégration à partir du nom ou de l'ID du composant Coral, en particulier car je ne suis pas un pro de Linux donc j'avais des difficultés à repérer le port USB, l'intégrer à travers l'interface Proxmox, etc.
-Je n'ai pas mis de photos car je pense que vous avez déjà du intégrer des dongle USB à votre Home Assistant OS
+Je n'ai  mis qu'une photo car je pense que vous avez déjà du intégrer des dongle USB à votre Home Assistant OS
 
 Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directement sur votre ordi (pour ma part un NUC), il faut :
 - aller dans l'interface Proxmox,
@@ -38,4 +38,8 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 - la première fois pour moi il était vu comme constructeur GOOGLE avec un id
 - après quelques tests de Frigate il avait disparu de la config et il a donc fallu le réinstaller, cette fois ci il n'a pas de nom constructeur il faut l'identifier avec son id (qui avait aussi changé)
 - après cette seconde intégration il est stable chez moi et reconnu dans Frigate (on verra plus loin comment en être sûr).
+
+    ![Coral dans VM HAOS](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/219aca98-1129-495c-9c5b-67719a8e3805)
+
+
 
