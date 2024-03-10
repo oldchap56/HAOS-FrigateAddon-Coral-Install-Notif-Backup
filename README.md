@@ -52,7 +52,7 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 - 
 
 ## Construction de la Configuration Frigate
-Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), 
+Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), c'est là que nous allons configurer Frigate.
 
   
 ## 3. Intégration de Frigate
