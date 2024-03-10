@@ -59,6 +59,10 @@ A partir de ce moment vous pourrez configurer Fritage.
 ## Construction de la Configuration Frigate
 Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), c'est là que nous allons configurer Frigate.
 Pour cela je vous joins mon fichier de configuration avec ccommentaires, il se  nomme "Config Frigate addon oldchap56" et les commentaires sont à l'intérieur. Pour avoir des détails sur le contenu je vous conseille l'excellent tutoriel dont il est tiré, rédigé par Raynox et que vous trouverez sur https://www.youtube.com/watch?v=-haxDKIOEao
+En gros les options choisies permettent à chaque détection d'un humain par Frigate (fait sur le flux basse résolution) de faire un snapshot et une vidéo avec le flux haute résoution. 
+Ces shapshots et vidéos sont accessibles :
+- soit dans l'interface Frigate, en cliquant sur EVents, on a toutes le détections classées chronologiquement
+- soit dans l'interface Médias, classées par date puis caméra puis à nouveau chronologie.
   
 ## 3. Intégration de Frigate
 
