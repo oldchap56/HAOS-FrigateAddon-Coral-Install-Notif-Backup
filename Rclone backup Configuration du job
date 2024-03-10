@@ -1,1 +1,8 @@
-
+- name: Synchro frigate vers gdrive
+  command: copyto
+  sources:
+    - /media/frigate
+  destination: google-drive:frigate
+  include: []
+  exclude: []
+  flags: {}
