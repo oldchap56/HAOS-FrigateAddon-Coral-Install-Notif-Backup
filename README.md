@@ -91,8 +91,8 @@ Description du job :m
 ### ATTENTION : il faut configurer l'accès à Google drive par rclone ! 
 Pour cela il faut obtenir de Google Drive un client id / client secret (qui sont créés pr Google Drive sur son API de connection des applications), permettant a Rclone de déposer les fichiers : https://rclone.org/drive/#making-your-own-client-id
 Mais, sous HAos, je n'ai pas réussi à générer le token  qui et une troisième information nécessaire pour connecter une application à google drive.
-J'ai donc fait (comme Ryan72) une installation rclone sous Linux (en ligne de commande) qui a fonctionnée tout de suite, ce qui m'a permis  afin de récupérer le token à partir des clientid/client secret déjà obtenus.
+J'ai donc fait (comme Ryan72) une installation rclone sous Linux (en ligne de commande avec la commande rclone config) qui a fonctionnée tout de suite, ce qui m'a permis  afin de récupérer le token à partir des clientid/client secret déjà obtenus.
 J'ai scrupuleusement copié les 3 informations (client id, client secret, token) ce qui m'a parmis de les integrer ensuite dans home assistant au niveau de la configuration d'accès sous "rclone back-up".
 Si tout ça a bien marché vous pourrez voir que vous êtes connectés en cliquant sur Rclone back-up dans le panneau de gauche.
-
-'
+### Re attention !
+Au début on fonctionne vu de Google avec un mode "test" pour rclone. Je suppose que le délai de validité du token est très réduit dans ce mode, j'ai donc lancé une procédure de validation de l'application Rclone chez Google dans l'API
