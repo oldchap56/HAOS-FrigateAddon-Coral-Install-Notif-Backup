@@ -100,3 +100,4 @@ Au début on fonctionne vu de Google avec un mode "test" pour rclone. Je suppose
 ## Construction d’une Automatisation pour relancer l’add-on "Rclone backup"
 Ceci permet de relancer la copie vers Gdrive dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite après l’action (au cas où par exemple les intrus volent ou détruisent votre serveur HAOS).
 L'automatisation est dans un fichier de ce tutoriel sous le nom "Redémarrage Rclone backup si détection humain"
+Remarque :  j'ai mis 15 secondes de temporisation avant de démarrer la copie car les vidéos sauvegardées par Frigate dans HAOS sont découpées en tronçons de 10 secondes, comme ça la copie démarre avec au moins une vidéo à sauvegarder.
