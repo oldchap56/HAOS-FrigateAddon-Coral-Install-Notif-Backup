@@ -87,4 +87,12 @@ Description du job :m
 - la commande est copyto qui copie à chaque lancement les fichiers vers Google drive (donc je gère à la main les fichiers dns google drive pour la destruction par exemple). Si vous souhaitez synchroniser la source (HAOS) et la destination (Google Drive) qui auront toujours le même contenu, mettez à la place la commande rsynch [A VALIDER].
 - source : /media/frigate est l'endroit où Frigate met les fichiers par défaut.
 - destination : google-drive:frigate. frigate est le répertoire à la racine de mon google drive où je fais mes sauvebardes.
+- 
 ### ATTENTION : il faut configurer l'accès à Google drive par rclone ! 
+Pour cela il faut obtenir de Google Drive un client id / client secret (qui sont créés pr Google Drive sur son API de connection des applications), permettant a Rclone de déposer les fichiers : https://rclone.org/drive/#making-your-own-client-id
+Mais, sous HAos, je n'ai pas réussi à générer le token  qui et une troisième information nécessaire pour connecter une application à google drive.
+J'ai donc fait (comme Ryan72) une installation rclone sous Linux (en ligne de commande) qui a fonctionnée tout de suite, ce qui m'a permis  afin de récupérer le token à partir des clientid/client secret déjà obtenus.
+J'ai scrupuleusement copié les 3 informations (client id, client secret, token) ce qui m'a parmis de les integrer ensuite dans home assistant au niveau de la configuration d'accès sous "rclone back-up".
+Si tout ça a bien marché vous pourrez voir que vous êtes connectés en cliquant sur Rclone back-up dans le panneau de gauche.
+
+'
