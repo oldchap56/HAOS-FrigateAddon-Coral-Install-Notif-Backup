@@ -54,7 +54,7 @@ Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), c'est l�
 Pour cela je vous joins mon fichier de configuration avec ccommentaires.
 https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/blob/65a43bed8a3ca97620de6baefc6fb9fef24674eb/Config%20Frigate%20addon%20oldchap56
 
-
+Config Frigate addon oldchap56
   
 ## 3. Intégration de Frigate
 
