@@ -56,7 +56,7 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 
 A partir de ce moment vous pourrez configurer Fritage.
 
-## Construction de la Configuration Frigate
+## 3. Construction de la Configuration Frigate
 Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), c'est là que nous allons configurer Frigate.
 Pour cela je vous joins mon fichier de configuration avec ccommentaires, il se  nomme "Config Frigate addon oldchap56" et les commentaires sont à l'intérieur. Pour avoir des détails sur le contenu je vous conseille l'excellent tutoriel dont il est tiré, rédigé par Raynox et que vous trouverez sur https://www.youtube.com/watch?v=-haxDKIOEao
 
@@ -65,8 +65,11 @@ Ces shapshots et vidéos sont accessibles :
 - soit dans l'interface Frigate, en cliquant sur EVents, on a toutes le détections classées chronologiquement
 - soit dans l'interface Médias, classées par date puis caméra puis à nouveau chronologie.
   
-## 3. Intégration de Frigate
+## 4. Intégration de Frigate
 Cette intégration permet d'utiliser les capteurs, évènements etc. de Frigate qui discute en mqtt avec le reste du monde (HAOS, les caméras etc.). C'et ce qui permet de créer des Automatisations à partir de ce qui se passe à l'intérieur de Frigate.
 Pour l'intégration, il faut aller dans HACS (barre de gauche), Intégrations, cliquer sur Dépots personnalisés pour inclure le lien suivant dans la catégorie Intégration
 https://github.com/blakeblackshear/frigate-hass-integration.
 Ensuite, cliquer dessus pour l'installer. [A VALIDER]
+
+## 5. Téléchargement de l’add-on “rclone backup” 
+Il va servir à exporter les photos et vidéos de personnes dans google-drive.
