@@ -97,7 +97,13 @@ Si tout ça a bien marché vous pourrez voir que vous êtes connectés en cliqua
 ### Re attention !
 Au début on fonctionne vu de Google avec un mode "test" pour rclone. Je suppose que le délai de validité du token est très réduit dans ce mode. J'ai redemandé un token et ça a bien marché tout de suite .... A SUIVRE.
 
-## Construction d’une Automatisation pour relancer l’add-on "Rclone backup"
+## 7. Construction d’une Automatisation pour relancer l’add-on "Rclone backup"
 Ceci permet de relancer la copie vers Gdrive dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite après l’action (au cas où par exemple les intrus volent ou détruisent votre serveur HAOS).
 L'automatisation est dans un fichier de ce tutoriel sous le nom "Redémarrage Rclone backup si détection humain"
 Remarque :  j'ai mis 15 secondes de temporisation avant de démarrer la copie car les vidéos sauvegardées par Frigate dans HAOS sont découpées en tronçons de 10 secondes, comme ça la copie démarre avec au moins une vidéo à sauvegarder.
+
+## 8. Configuration des notifications à l’aide du blueprint de SgtBatten
+Rien de compliqué pour cela, ça vous permet de recevoir sur votre smartphone une notification en cas d'intrusion avec un snapshot et en cliquant dessus l'accès aux vidéos à travers l'application mobile de Home Assistant.
+Pour cela :
+- allez dans Paramètres, Automatisation, Blueprint et allez chercher l'automatisation Frigate Notifications de SgtBatten.
+- 
