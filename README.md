@@ -10,6 +10,8 @@ Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de poi
 - intallé les add-ons suivants : HACS, Mosquitto browser
 - mis en place votre accès extérieur : pour ma part avec les add-ons DuckDNS et NGINX  
 - testé vos caméras avec le protocole rtsp ou onvif (ou autre mais je n'ai pas testé)
+- avoir configuré un bot Telegram pour envoyer des notifications sauvegardées à la famille.
+
 ### Déroulé du tutoriel :
 - Branchement de Coral dans la VM HAOS
 - Installation de Frigate add-on
@@ -109,5 +111,10 @@ Pour cela :
 - créez une Automatisation à l'aide du Blueprint. J'ai mis mon fichier Yaml pour cette Automatidation dans le fichier joint "Détection intrusion & envoi Notification HA"
 Mais, ceci ne me suffisait pas car on ne peut a priori envoyer la Notification que sur 1 portable (je n'ai pas réussi à faire un Groupe de portables dans HA).
 Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Telegram. Ainsi tous les membres dela famille qui en font partie recevront l'alerte en cas d'intrusion.
+
+## Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
+Pour faire ça il faut avoir configuré un Bot Telegram. Si ce n'est fait je vous conseille ce tutoriel Youtube de Maternix (https://www.youtube.com/watch?v=gJpnIslsLqU)
+Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home Assistant, il ne reste plus qu'à faire une automatisation !
+La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Telegram Frigate Intrusion".
 
 
