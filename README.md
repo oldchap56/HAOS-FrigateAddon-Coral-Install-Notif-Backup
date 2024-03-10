@@ -51,10 +51,7 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 
 ## Construction de la Configuration Frigate
 Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), c'est là que nous allons configurer Frigate.
-Pour cela je vous joins mon fichier de configuration avec ccommentaires.
-https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/blob/65a43bed8a3ca97620de6baefc6fb9fef24674eb/Config%20Frigate%20addon%20oldchap56
-
-Config Frigate addon oldchap56
+Pour cela je vous joins mon fichier de configuration avec ccommentaires, il se  nomme "Config Frigate addon oldchap56" et les commentaires sont à l'intérieur. Pour avoir des détails sur le contenu je vous conseille l'excellent tutoriel dont il est tiré, rédigé par Raynox et que vous trouverez sur https://www.youtube.com/watch?v=-haxDKIOEao
   
 ## 3. Intégration de Frigate
 
