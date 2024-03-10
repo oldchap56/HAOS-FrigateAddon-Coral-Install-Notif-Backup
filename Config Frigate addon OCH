@@ -5,8 +5,8 @@ mqtt:
   port: 1883
   client_id: frigate_client
   topic_prefix: frigate
-  user: "ici le user déclaré dans votre configuration mqtt"
-  password: ici le user déclaré dans votre configuration mqtt
+  user: #ici le user déclaré dans votre configuration mqtt
+  password: #ici le mot de passe déclaré dans votre configuration mqtt
   stats_interval: 15
 
 detectors:
@@ -86,17 +86,17 @@ record:
 
 
 cameras:
-  # Tapo C310 interne
+  # Tapo C310 externe
   frigate1:
     ffmpeg:
       inputs:
         # Haute résolution
-        - path: rtsp://adminc310:Ccavokk0!1@192.168.1.32:554/stream1
+        - path: #ici URL de votre flux rtsp haute définition (dépend de votre caméra)
           input_args: preset-rtsp-restream
           roles:
             - record
         # Basse résolution
-        - path: rtsp://adminc310:Ccavokk0!1@192.168.1.32:554/stream2
+        - path: #ici URL de votre flux rtsp basse définition (dépend de votre caméra)
           input_args: preset-rtsp-restream
           roles:
             - detect
@@ -109,10 +109,6 @@ cameras:
     objects:
       track:
         - person
-#        - dog
-#        - cat
-#        - bird
-#        - mouse
       filters:
         person:
           # Optional: minimum score for the object to initiate tracking (default: shown below)
@@ -125,12 +121,12 @@ cameras:
     ffmpeg:
       inputs:
        # Haute résolution
-         - path: rtsp://adminc210:Ccavokk0!1@192.168.1.31:554/stream1
+         - path: #ici URL de votre flux rtsp haute définition (dépend de votre caméra)
            input_args: preset-rtsp-restream
            roles:
             - record
         # Basse résolution
-         - path: rtsp://adminc210:Ccavokk0!1@192.168.1.31:554/stream2
+         - path: #ici URL de votre flux rtsp basse définition (dépend de votre caméra)
            input_args: preset-rtsp-restream
            roles:
             - detect
@@ -140,51 +136,8 @@ cameras:
       fps: 5 #Recommended value of 5. Ideally, try and reduce your FPS on the camera.
       enabled: True
 
-    objects:
-      track:
-        - person
-#        - dog
-#        - cat
-#        - bird
-#        - mouse
-      filters:
-        person:
-          # Optional: minimum score for the object to initiate tracking (default: shown below)
-          min_score: 0.7
-          # Optional: minimum decimal percentage for tracked object's computed score to be considered a true positive (default: shown below)
-          threshold: 0.8
-
-# Vansview 
-  frigate3:
-    ffmpeg:
-      inputs:
-        - path: rtsp://HA:Wcavokkw!1@192.168.1.30:554/live/ch1
-          input_args: preset-rtsp-restream
-          roles:
-            - detect
-    detect:
-#      width: 1280 #width of the frame for the input with the detect role
-#      height: 720 #height of the frame for the input with the detect role (default: shown below)
-      fps: 5 #Recommended value of 5. Ideally, try and reduce your FPS on the camera.
-      enabled: True
-
-    objects:
-      track:
-        - person
-#        - dog
-#        - cat
-#        - bird
-#        - mouse
-      filters:
-        person:
-          # Optional: minimum score for the object to initiate tracking (default: shown below)
-          min_score: 0.7
-          # Optional: minimum decimal percentage for tracked object's computed score to be considered a true positive (default: shown below)
-          threshold: 0.8
-
 go2rtc:
   streams:
     back:
       - ffmpeg:rtsp://adminc210:Ccavokk0!1@192.168.1.31:554/stream2
       - ffmpeg:rtsp://adminc310:Ccavokk0!1@192.168.1.32:554/stream2
-      - ffmpeg:rtsp://HA:Wcavokkw!1@192.168.1.30:554/live/ch1
