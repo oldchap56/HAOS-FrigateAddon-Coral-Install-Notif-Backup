@@ -47,10 +47,12 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 - Redémarrez Home Assistant
 - Allez dans Paramétres, Modules complémentaires, Boutique des modules complémentaires (en bas pour moi), recherchez Frigate et cliquez sur Frigate, suivez les indications en indiquant que vous le faîtes tourner sur HAOS.
 
-![Frigate Add-on](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/1ea7e5a3-8082-4348-9e0e-3d1826be2c57)
+![Frigate Add-on2](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/44193782-d06a-4637-b30c-4f1a011119df)
 
 
 - Revenez dans Paramètres, Modules complémentaires et cochez "Afficher dans la barre latérale"
+ ![Frigate Add-on](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/1ea7e5a3-8082-4348-9e0e-3d1826be2c57)
+
 - A partir de ce moment vous pourrez configurer Fritage.
 
 ## Construction de la Configuration Frigate
