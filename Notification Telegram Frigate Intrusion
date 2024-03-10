@@ -10,13 +10,13 @@ action:
   - service: telegram_bot.send_message
     metadata: {}
     data:
-      message: Alerte INTRUSION ARZON
+      message: Alerte INTRUSION
       parse_mode: html
   - service: telegram_bot.send_photo
     data:
       authentication: digest
       url: >-
-        https://oldchap56.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
+        https://xxxxxxxxx.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
       username: "!secret login"
       password: "!secret mdp"
       tag: "{{trigger.payload_json[\"after\"][\"id\"]}}"
