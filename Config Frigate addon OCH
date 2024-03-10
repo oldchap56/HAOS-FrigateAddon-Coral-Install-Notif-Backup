@@ -1,12 +1,12 @@
 #configutation Frigate add-on
 mqtt:
   enabled: true
-  host: 192.168.1.53
+  host: 192.XXX.X.XX    #ici l'adresse IP interne de HAOS
   port: 1883
   client_id: frigate_client
   topic_prefix: frigate
-  user: mqtt-login
-  password: mqtt-pass
+  user: "ici le user déclaré dans votre configuration mqtt"
+  password: ici le user déclaré dans votre configuration mqtt
   stats_interval: 15
 
 detectors:
