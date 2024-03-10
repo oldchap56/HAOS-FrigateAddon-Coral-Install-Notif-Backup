@@ -106,4 +106,8 @@ Remarque :  j'ai mis 15 secondes de temporisation avant de démarrer la copie ca
 Rien de compliqué pour cela, ça vous permet de recevoir sur votre smartphone une notification en cas d'intrusion avec un snapshot et en cliquant dessus l'accès aux vidéos à travers l'application mobile de Home Assistant.
 Pour cela :
 - allez dans Paramètres, Automatisation, Blueprint et allez chercher l'automatisation Frigate Notifications de SgtBatten.
-- 
+- créez une Automatisation à l'aide du Blueprint. J'ai mis mon fichier Yaml pour cette Automatidation dans le fichier joint "Détection intrusion & envoi Notification HA"
+Mais, ceci ne me suffisait pas car on ne peut a priori envoyer la Notification que sur 1 portable (je n'ai pas réussi à faire un Groupe de portables dans HA).
+Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Telegram. Ainsi tous les membres dela famille qui en font partie recevront l'alerte en cas d'intrusion.
+
+
