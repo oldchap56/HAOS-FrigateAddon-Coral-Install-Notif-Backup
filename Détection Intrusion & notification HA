@@ -1,0 +1,22 @@
+alias: Détection Intrusion Cuisine C210
+description: Fait avec le bluepring de Sgt Batten
+use_blueprint:
+  path: SgtBatten/Stable.yaml
+  input:
+    title: "Frigate events "
+    message: Personne identifiée CUISINE
+    attachment: thumbnail
+    labels:
+      - person
+    tap_action: /ccab4aaf_frigate/dashboard
+    url_1: "{{base_url}}/api/frigate/notifications/{{id}}/snapshot.jpg"
+    button_1: Voir les photos
+    url_2: "{{base_url}}/api/frigate/notifications/{{id}}/snapshot.jpg"
+    camera: camera.frigate2
+    notify_device: xxxxxxxx
+    color: red
+    ios_live_view: false
+    loiter_timer: 1
+    cooldown: 2
+    silence_timer: 0
+    critical: "true"
