@@ -81,4 +81,4 @@ Puis redémarrage de HAOS, Boutique de modules complémentaires, Ajouter Rclone 
 ## 6. Configuration de l’add-on “rclone backup” 
 Ma configuration de Rclone backup est particulière, j'ai dû "tordre" un peu l'addon car il fonctionne de base comme une sauvegarde à des moments fixés d'avance (jours, semaines, mois, années configurées dans un cron). 
 Mon fonctionnement consiste 
-Pour la configuration de Rclone back-up, voici ma configuration qui permet de lancer le backup à chaque démarrage de l'add-on.
+Pour la configuration de Rclone back-up, ma est configuration (accessible dans le fichier "Job pour Rclone"). Elle permet de lancer le backup à chaque démarrage de l'add-on (L'automatisation décrite dans le § suivant permettra de le relancer).
