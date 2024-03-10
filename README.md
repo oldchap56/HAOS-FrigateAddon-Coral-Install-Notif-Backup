@@ -49,10 +49,9 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 - Revenez dans Paramètres, Modules complémentaires et cochez "Afficher dans la barre latérale"
 - A partir de ce moment vous pourrez configurer Fritage.
 
-- 
-
 ## Construction de la Configuration Frigate
 Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), c'est là que nous allons configurer Frigate.
+Pour cela je vous joins mon fichier de configuration avec ccommentaires.
 
   
 ## 3. Intégration de Frigate
