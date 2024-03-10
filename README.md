@@ -112,7 +112,8 @@ Pour cela :
 Mais, ceci ne me suffisait pas car on ne peut a priori envoyer la Notification que sur 1 portable (je n'ai pas réussi à faire un Groupe de portables dans HA).
 Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Telegram. Ainsi tous les membres dela famille qui en font partie recevront l'alerte en cas d'intrusion.
 
-                      
+                      ![Notification HA](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/e19907b9-b973-4284-86a1-dfd4c0a27ffb)
+
 
 
 ## Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
@@ -120,6 +121,7 @@ Pour faire ça il faut avoir configuré un Bot Telegram. Si ce n'est fait je vou
 Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home Assistant, il ne reste plus qu'à faire une automatisation !
 La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Telegram Frigate Intrusion".
 
-                      
+                      ![Telegram bot](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/6693345b-f1f7-4342-a2f7-a3aa3accd5f3)
+
 
 
