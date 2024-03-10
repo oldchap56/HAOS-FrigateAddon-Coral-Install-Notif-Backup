@@ -1,0 +1,16 @@
+alias: Redémarrage Rclone backup sur détection humain
+description: ""
+trigger:
+  - platform: mqtt
+    topic: frigate/events
+condition: []
+action:
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 15
+      milliseconds: 0
+  - service: hassio.addon_restart
+    data:
+      addon: xxxxxxxxx_rclone_backup
+mode: restart
