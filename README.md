@@ -15,7 +15,8 @@ Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de poi
 - Installation de Frigate add-on
 - Construction de la Configuration Frigate
 - Intégration de Frigate (hé oui c'est différent, j'ai eu du mal à comprendre ça)
-- Téléchargement de l’add-on “rclone backup” qui va servir à exporter les photos et vidéos de personnes dans google-drive
+- Téléchargement et configuration de l’add-on “rclone backup” qui va servir à exporter les photos et vidéos de personnes dans google-drive
+- Configuration de l'addon "rclone backup"
 - Construction d’une Automatisation pour relancer l’add-on ‘Rclone backup) dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite après l’action
 - Configuration des notifications à l’aide du blueprint de SgtBatten
 - Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
@@ -73,3 +74,11 @@ Ensuite, cliquer dessus pour l'installer. [A VALIDER]
 
 ## 5. Téléchargement de l’add-on “rclone backup” 
 Il va servir à exporter les photos et vidéos de personnes dans google-drive.
+Ici encore il va falloir installer le lien dans les dépôts (Paramètres, Modules complémentaires, Boutiques des modules complémentaires, Trois petits  points en haut à droite, ajout de 
+https://github.com/ViViDboarder/hassio-addon-rclone
+Puis redémarrage de HAOS, Boutique de modules complémentaires, Ajouter Rclone back-up.
+
+## 6. Configuration de l’add-on “rclone backup” 
+Ma configuration de Rclone backup est particulière, j'ai dû "tordre" un peu l'addon car il fonctionne de base comme une sauvegarde à des moments fixés d'avance (jours, semaines, mois, années configurées dans un cron). 
+Mon fonctionnement consiste 
+Pour la configuration de Rclone back-up, voici ma configuration qui permet de lancer le backup à chaque démarrage de l'add-on.
