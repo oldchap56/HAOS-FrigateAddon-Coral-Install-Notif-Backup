@@ -1,0 +1,27 @@
+alias: Notification Telegram Frigate Intrusion
+description: ""
+trigger:
+  - platform: mqtt
+    topic: frigate/events
+    payload: new
+    value_template: "{{ value_json.type }}"
+condition: []
+action:
+  - service: telegram_bot.send_message
+    metadata: {}
+    data:
+      message: Alerte INTRUSION ARZON
+      parse_mode: html
+  - service: telegram_bot.send_photo
+    data:
+      authentication: digest
+      url: >-
+        https://oldchap56.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
+      username: "!secret login"
+      password: "!secret mdp"
+      tag: "{{trigger.payload_json[\"after\"][\"id\"]}}"
+      when: "{{trigger.payload_json[\"after\"][\"start_time\"]|int}}"
+      entity_id: |-
+        camera.{{trigger.payload_json["after"]["camera"] | replace("-","_") |
+          lower}}
+mode: parallel
