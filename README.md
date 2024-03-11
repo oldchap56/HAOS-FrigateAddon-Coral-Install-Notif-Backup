@@ -27,7 +27,7 @@ Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de poi
 - Configuration des notifications à l’aide du blueprint de SgtBatten
 - Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
 - Ajout dans Alarmo de 2 actions liées aux alarmes : 
-  - activation des détections caméras si Alarme armée (sert à faire des essais quand on ve
+  - activation des détections caméras si Alarme armée (sert à faire des essais quand on veut)
   - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
 ## 1. Branchement de Coral dans la VM HAOS
 Il y a de multiples tutoriels sur "Comment faire en sorte d'accéder à Coral depuis Frigate", toutes basées sur l'intégration à partir du numéro du port USB.
