@@ -8,7 +8,7 @@ Une grande documentation existe pour installer Frigate dans un Container LSX, ma
 Ayant pas mal peiné et échangé sur ces sujets, je pense intéressant de faire  profiter les autres de ce qui marche chez moi. 
 Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de points à améliorer. Je les intègrerai au fil des modifications de ma configuration.
 ## Prérequis
-### Il est condidéré que vous avez pour 
+### Il est considéré que vous avez pour 
 - installé Proxmox
 - intallé HAOS
 - intallé les add-ons suivants : HACS, Mosquitto browser, Alarmo
