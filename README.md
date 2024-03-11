@@ -50,8 +50,6 @@ Donc, après avoir branché votre Clé CORAL (avec un cable USB et non directeme
 - Redémarrez Home Assistant
 - Allez dans Paramétres, Modules complémentaires, Boutique des modules complémentaires (en bas pour moi), recherchez Frigate et cliquez sur Frigate, suivez les indications en indiquant que vous le faîtes tourner sur HAOS.
 
-![Notification HA](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27e6e037-cfc0-459c-a130-dfa8c1453d6b)
-
 - Revenez dans Paramètres, Modules complémentaires et cochez "Afficher dans la barre latérale"
   
  ![Frigate Add-on](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/1ea7e5a3-8082-4348-9e0e-3d1826be2c57)
