@@ -1,4 +1,4 @@
-alias: Redémarrage Rclone backup sur détection humain
+alias: Redémarrage Rclone backup sur détection de personnes
 description: ""
 trigger:
   - platform: mqtt
