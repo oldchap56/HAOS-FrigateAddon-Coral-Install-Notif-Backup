@@ -126,7 +126,7 @@ Elles servent aussi à faire des essais de réglage en les déclenchant manuelle
 
 
 
-Les 2 actions sont configurées dans Alarmo
+Les 2 actions sont configurées dans Alarmo et le fichier exemple est "Détection démarrage action Alarmoo
  - activation des détections caméras si Alarme armée (sert à faire des essais quand on ve
   - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
 
