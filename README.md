@@ -7,7 +7,7 @@ Ceci est d'ailleurs une Version 1 de la documentation, car il y a pas mal de poi
 ### Il est condidéré que vous avez pour 
 - installé Proxmox
 - intallé HAOS
-- intallé les add-ons suivants : HACS, Mosquitto browser
+- intallé les add-ons suivants : HACS, Mosquitto browser, Alarmo
 - mis en place votre accès extérieur : pour ma part avec les add-ons DuckDNS et NGINX  
 - testé vos caméras avec le protocole rtsp ou onvif (ou autre mais je n'ai pas testé)
 - avoir configuré un bot Telegram pour envoyer des notifications sauvegardées à la famille.
@@ -112,12 +112,22 @@ Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Tel
 ![Notification HA-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/51406148-95b9-4608-9c1f-4dfac72a58a3)
 
 
-## Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
+## 9. Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
 Pour faire ça il faut avoir configuré un Bot Telegram. Si ce n'est fait je vous conseille ce tutoriel Youtube de Maternix (https://www.youtube.com/watch?v=gJpnIslsLqU)
 Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home Assistant, il ne reste plus qu'à faire une automatisation !
 La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Telegram Frigate Intrusion".
 
+![Telegram bot-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/318790c0-2a7f-4a17-a330-c30a284d9363)
+
+## 10. Ajout dans Alarmo de 2 actions liées aux alarmes : 
+Ces 2 Automatisations créées à partir d'actions créées dans Alarmo servent à activer ou non les détections selon que l'alarme est déclenchée ou non.
+Elles servent aussi à faire des essais de réglage en les déclenchant manuellement au lieu de mettre l'alarme (ici exemple où on démarre les détections et les enregistrements en appuyant sur ESSAI)
+![démarrage détection](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27ca58bb-26c4-4206-86a4-d4c22a7a08c8)
 
 
+
+Les 2 actions sont configurées dans Alarmo
+ - activation des détections caméras si Alarme armée (sert à faire des essais quand on ve
+  - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
 
 
