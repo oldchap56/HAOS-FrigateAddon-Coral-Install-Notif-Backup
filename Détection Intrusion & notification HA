@@ -1,5 +1,5 @@
-alias: Détection Intrusion Cuisine C210
-description: Fait avec le bluepring de Sgt Batten
+alias: Détection Intrusion Cuisine
+description: envoie des notifications à un mobile
 use_blueprint:
   path: SgtBatten/Stable.yaml
   input:
