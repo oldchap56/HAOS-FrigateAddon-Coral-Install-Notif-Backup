@@ -56,15 +56,15 @@ Donc, après avoir branché votre Clé CORAL - avec un cable USB et non directem
   
  ![Frigate Add-on](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/1ea7e5a3-8082-4348-9e0e-3d1826be2c57)
 
-A partir de ce moment vous pourrez configurer Fritage.
+A partir de ce moment vous pourrez configurer Frigate.
 
 ## 3. Construction de la Configuration Frigate
-Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), c'est là que nous allons configurer Frigate.
-Pour cela je vous joins mon fichier de configuration avec ccommentaires, il se  nomme "Config Frigate addon oldchap56" et les commentaires sont à l'intérieur. Pour avoir des détails sur le contenu je vous conseille l'excellent tutoriel dont il est tiré, rédigé par Raynox et que vous trouverez sur https://www.youtube.com/watch?v=-haxDKIOEao
+Puisque vous avez Frigate dans la barre latérale (à gauche pour moi), c'est par là que nous allons le configurer.
+Pour cela je vous joins mon fichier de configuration, il se  nomme "Config Frigate addon oldchap56" et les commentaires sont à l'intérieur. Pour avoir des détails sur le contenu je vous conseille l'excellent tutoriel dont il est tiré, rédigé par Raynox et que vous trouverez sur https://www.youtube.com/watch?v=-haxDKIOEao
 
 En gros les options choisies permettent à chaque détection d'un humain par Frigate (fait sur le flux basse résolution) de faire un snapshot et une vidéo avec le flux haute résoution. 
 Ces shapshots et vidéos sont accessibles :
-- soit dans l'interface Frigate, en cliquant sur EVents, on a toutes le détections classées chronologiquement
+- soit dans l'interface Frigate, en cliquant sur Events, on a toutes le détections classées chronologiquement,
 - soit dans l'interface Médias, classées par date puis caméra puis à nouveau chronologie.
   
 ## 4. Intégration de Frigate
