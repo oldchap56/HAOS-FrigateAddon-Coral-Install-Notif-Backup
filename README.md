@@ -126,13 +126,15 @@ Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home A
 La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Telegram Frigate Intrusion".
 
 ![Telegram bot-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/318790c0-2a7f-4a17-a330-c30a284d9363)
+
 Ici une copie du message envoyé par HAOS par Telegram sur mon bot
 
 ## 10. Ajout dans Alarmo de 2 actions liées aux alarmes : 
 Ces 2 Automatisations créées à partir d'actions créées dans Alarmo servent à activer ou non les détections selon que l'alarme est déclenchée ou non.
 Elles servent aussi à faire des essais de réglage en les déclenchant manuellement au lieu de mettre l'alarme (ici exemple où on démarre les détections et les enregistrements en appuyant sur ESSAI)
-Ici un
 ![démarrage détection](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27ca58bb-26c4-4206-86a4-d4c22a7a08c8)
+
+Ici un message arrivant du bot Télégram.
 
 Les 2 actions sont configurées dans Alarmo et le fichier exemple est "Détection démarrage action Alarmoo
  - activation des détections caméras si Alarme armée (sert à faire des essais quand on ve
