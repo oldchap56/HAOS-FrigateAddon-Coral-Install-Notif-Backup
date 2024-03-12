@@ -77,7 +77,7 @@ Nota : on peut aussi l'intégrer directement à partir du bouton bleu dans le RE
 ## 5. Téléchargement de l’add-on “rclone backup” 
 Il va servir à exporter les photos et vidéos de personnes dans google-drive au fil de l'eau.
 Ici encore il va falloir installer le lien dans les dépôts (Paramètres, Modules complémentaires, Boutiques des modules complémentaires, Trois petits  points en haut à droite, ajout de 
-[[https://github.com/ViViDboarder/hassio-addon-rclone](https://github.com/topics/rclone-backup).](https://github.com/jcwillox/hassio-rclone-backup) 
+(https://github.com/jcwillox/hassio-rclone-backup) 
 Puis redémarrage de HAOS, Boutique de modules complémentaires, Ajouter Rclone back-up.
 Nota : on peut aussi l'intégrer directement à partir du bouton bleu dans le README du Github.
 
