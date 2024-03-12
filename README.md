@@ -114,17 +114,19 @@ Pour cela :
 - créez une Automatisation à l'aide du Blueprint. J'ai mis mon fichier Yaml pour cette Automatidation dans le fichier joint "Détection intrusion & envoi Notification HA"
 
 ![Notification HA-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/51406148-95b9-4608-9c1f-4dfac72a58a3)
-
+Ici la notification sur mon portable de la notication HA.
 Mais, ceci ne me suffisait pas car on ne peut a priori envoyer la Notification que sur 1 portable (je n'ai pas réussi à faire un Groupe de portables dans HA).
-Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Telegram. Ainsi tous les membres dela famille qui en font partie recevront l'alerte en cas d'intrusion.
+Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Telegram (VOIR §8 suivant). Ainsi tous les membres dela famille qui en font partie recevront l'alerte en cas d'intrusion.
 
 
 ## 9. Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
 Pour faire ça il faut avoir configuré un Bot Telegram. Si ce n'est fait je vous conseille ce tutoriel Youtube de Maternix (https://www.youtube.com/watch?v=gJpnIslsLqU)
+
 Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home Assistant, il ne reste plus qu'à faire une automatisation !
 La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Telegram Frigate Intrusion".
-Ici une copie du message envoyé par HAOS par Telegram sur mon bot
+
 ![Telegram bot-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/318790c0-2a7f-4a17-a330-c30a284d9363)
+Ici une copie du message envoyé par HAOS par Telegram sur mon bot
 
 ## 10. Ajout dans Alarmo de 2 actions liées aux alarmes : 
 Ces 2 Automatisations créées à partir d'actions créées dans Alarmo servent à activer ou non les détections selon que l'alarme est déclenchée ou non.
