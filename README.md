@@ -92,7 +92,7 @@ Description du job :
 - destination : google-drive:frigate. frigate est le répertoire à la racine de mon google drive où je fais mes sauvebardes.
 -  
 ### ATTENTION : il faut configurer l'accès à Google drive par rclone ! 
-Pour cela il faut obtenir de Google Drive un client id / client secret (qui sont créés pr Google Drive sur son API de connection des applications), permettant a Rclone de déposer les fichiers : https://rclone.org/drive/#making-your-own-client-id
+Pour cela il faut obtenir de Google Drive pour Rclone un client id / client secret (qui sont créés sur son API de connection des applications) : https://rclone.org/drive/#making-your-own-client-id
 Mais, sous HAos, je n'ai pas réussi à générer le token  qui et une troisième information nécessaire pour connecter une application à google drive.
 J'ai donc fait (comme Ryan72) une installation rclone sous Linux (en ligne de commande avec la commande rclone config) qui a fonctionnée tout de suite, ce qui m'a permis  afin de récupérer le token à partir des clientid/client secret déjà obtenus.
 J'ai scrupuleusement copié les 3 informations (client id, client secret, token) ce qui m'a parmis de les integrer ensuite dans home assistant au niveau de la configuration d'accès sous "rclone back-up".
