@@ -92,10 +92,11 @@ Description du job :
 - destination : google-drive:frigate. frigate est le répertoire à la racine de mon google drive où je fais mes sauvebardes.
 -  
 ### ATTENTION : il faut configurer l'accès à Google drive par rclone ! 
-Pour cela il faut obtenir de Google Drive pour Rclone un client id / client secret (qui sont créés sur son API de connection des applications) : https://rclone.org/drive/#making-your-own-client-id
-Mais, sous HAos, je n'ai pas réussi à générer le token  qui et une troisième information nécessaire pour connecter une application à google drive.
-J'ai donc fait (comme Ryan72) une installation rclone sous Linux (en ligne de commande avec la commande rclone config) qui a fonctionnée tout de suite, ce qui m'a permis  afin de récupérer le token à partir des clientid/client secret déjà obtenus.
-J'ai scrupuleusement copié les 3 informations (client id, client secret, token) ce qui m'a parmis de les integrer ensuite dans home assistant au niveau de la configuration d'accès sous "rclone back-up".
+Pour cela il faut obtenir de Google Drive pour Rclone un client id / client secret (qui sont créés sur son API de connection des applications) :la procédure complète se trouve sur https://rclone.org/drive/#making-your-own-client-id
+
+Mais, sous HAos, je n'ai pas réussi à générer le token  qui et une troisième information nécessaire pour connecter une application à google drive. J'ai donc fait (comme Ryan72) une installation rclone sous Linux (en ligne de commande avec la commande rclone config) qui a fonctionnée tout de suite, ce qui m'a permis  afin de récupérer le token à partir des clientid/client secret déjà obtenus.
+J'ai scrupuleusement copié les 3 informations (client id, client secret, token) ce qui m'a parmis de les integrer ensuite dans home assistant au niveau de la configuration d'accès de Rclone dans le fichier config/rclone.conf de votre HAOS.
+Le fichier en exemple se nomme "Rclone.conf"
 Si tout ça a bien marché vous pourrez voir que vous êtes connectés en cliquant sur Rclone back-up dans le panneau de gauche, en particulier en utilisant le menu de gauche Explorer et en "montant" Google Drive. Vous devez alors voir tous vos répertoires Gdrive dans le tableau. C'est la preuve que tout est bien configuré pour Rclone back-up.
 ### Re attention !
 Au début on fonctionne vu de Google avec un mode "test" pour rclone. Je suppose que le délai de validité du token est très réduit dans ce mode. J'ai redemandé un token et ça a bien marché tout de suite .... A SUIVRE.
