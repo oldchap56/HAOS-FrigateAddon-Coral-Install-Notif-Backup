@@ -103,7 +103,8 @@ Au début on fonctionne vu de Google avec un mode "test" pour rclone. Je suppose
 
 ## 7. Construction d’une Automatisation pour relancer l’add-on "Rclone backup"
 Ceci permet de relancer la copie vers Gdrive dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite après l’action (au cas où par exemple les intrus volent ou détruisent votre serveur HAOS).
-L'automatisation est dans un fichier de ce tutoriel sous le nom "Redémarrage Rclone backup si détection humain"
+L'automatisation est dans un fichier de ce tutoriel sous le nom "Redémarrage Rclone backup si détection humain".
+
 Remarque :  j'ai mis 15 secondes de temporisation avant de démarrer la copie car les vidéos sauvegardées par Frigate dans HAOS sont découpées en tronçons de 10 secondes, comme ça la copie démarre avec au moins une vidéo à sauvegarder.
 
 ## 8. Configuration des notifications à l’aide du blueprint de SgtBatten
@@ -122,18 +123,19 @@ Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Tel
 Pour faire ça il faut avoir configuré un Bot Telegram. Si ce n'est fait je vous conseille ce tutoriel Youtube de Maternix (https://www.youtube.com/watch?v=gJpnIslsLqU)
 Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home Assistant, il ne reste plus qu'à faire une automatisation !
 La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Telegram Frigate Intrusion".
-
+Ici une copie du message envoyé par HAOS par Telegram sur mon bot
 ![Telegram bot-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/318790c0-2a7f-4a17-a330-c30a284d9363)
 
 ## 10. Ajout dans Alarmo de 2 actions liées aux alarmes : 
 Ces 2 Automatisations créées à partir d'actions créées dans Alarmo servent à activer ou non les détections selon que l'alarme est déclenchée ou non.
 Elles servent aussi à faire des essais de réglage en les déclenchant manuellement au lieu de mettre l'alarme (ici exemple où on démarre les détections et les enregistrements en appuyant sur ESSAI)
+Ici un
 ![démarrage détection](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27ca58bb-26c4-4206-86a4-d4c22a7a08c8)
-
-
 
 Les 2 actions sont configurées dans Alarmo et le fichier exemple est "Détection démarrage action Alarmoo
  - activation des détections caméras si Alarme armée (sert à faire des essais quand on ve
   - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
+
+Si vous n'utilisez pas Alarmo vous devrez faire directement une Automatisation avec comme déclencheur la mise sous alarme de votre installation et comme action l'activation de switch.nom_de_votre_caméra_detect, qui est généré par Frigate.
 
 
