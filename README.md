@@ -84,13 +84,13 @@ Nota : on peut aussi l'intégrer directement à partir du bouton bleu dans le RE
 ## 6. Configuration de l’add-on “rclone backup” 
 Ma configuration de Rclone backup est particulière, j'ai dû "tordre" un peu l'addon car il fonctionne de base comme une sauvegarde à des moments fixés d'avance (jours, semaines, mois, années configurées dans un cron). 
 Mon fonctionnement consiste à redémarrer Rclone back up à chaque détection et non une fois tous les jours.
-Pour la configuration de Rclone back-up, ma est configuration (accessible dans le fichier "Job pour Rclone"). Elle permet de lancer le backup à chaque démarrage de l'add-on (L'automatisation décrite dans le § suivant permettra de le relancer).
+La configuration est située dans la partie Configuration de l'addon/Module complémentaire Rclone back-up (onglets en haut) , ma configuration (accessible dans le fichier "Job pour Rclone"). Elle permet de lancer le backup à chaque démarrage de l'add-on (L'automatisation décrite dans le § suivant permettra de le relancer).
 Description du job :
-- pas de mention du moment de la sauvegarde (ligne effacé) pour permettre un backup à chaque démarrage de l'addon
-- la commande est copyto qui copie à chaque lancement les fichiers vers Google drive (donc je gère à la main les fichiers dns google drive pour la destruction par exemple). Si vous souhaitez synchroniser la source (HAOS) et la destination (Google Drive) qui auront toujours le même contenu, mettez à la place la commande rsynch [A VALIDER].
+- pas de mention du moment de la sauvegarde (ligne effacée) pour permettre un backup à chaque démarrage de l'addon
+- la commande est copyto qui copie à chaque lancement les fichiers nouveaux de Frigate vers Google drive (ce qui me permet de gèrer à la main les fichiers dans google drive - par exemple pour la destruction par exemple). Si vous souhaitez synchroniser automatiquement la source (HAOS) et la destination (Google Drive) qui auront toujours le même contenu, mettez à la place la commande rsynch.
 - source : /media/frigate est l'endroit où Frigate met les fichiers par défaut.
 - destination : google-drive:frigate. frigate est le répertoire à la racine de mon google drive où je fais mes sauvebardes.
-- 
+-  
 ### ATTENTION : il faut configurer l'accès à Google drive par rclone ! 
 Pour cela il faut obtenir de Google Drive un client id / client secret (qui sont créés pr Google Drive sur son API de connection des applications), permettant a Rclone de déposer les fichiers : https://rclone.org/drive/#making-your-own-client-id
 Mais, sous HAos, je n'ai pas réussi à générer le token  qui et une troisième information nécessaire pour connecter une application à google drive.
