@@ -72,12 +72,14 @@ Cette intégration permet d'utiliser les capteurs, évènements etc. de Frigate 
 Pour l'intégration, il faut aller dans HACS (barre de gauche), Intégrations, cliquer sur Dépots personnalisés pour inclure le lien suivant dans la catégorie Intégration
 https://github.com/blakeblackshear/frigate-hass-integration.
 Ensuite, cliquer dessus pour l'installer. [A VALIDER]
+Nota : on peut aussi l'intégrer directement à partir du bouton bleu dans le README du Github.
 
 ## 5. Téléchargement de l’add-on “rclone backup” 
 Il va servir à exporter les photos et vidéos de personnes dans google-drive.
 Ici encore il va falloir installer le lien dans les dépôts (Paramètres, Modules complémentaires, Boutiques des modules complémentaires, Trois petits  points en haut à droite, ajout de 
-https://github.com/ViViDboarder/hassio-addon-rclone
+https://github.com/ViViDboarder/hassio-addon-rclone. 
 Puis redémarrage de HAOS, Boutique de modules complémentaires, Ajouter Rclone back-up.
+Nota : on peut aussi l'intégrer directement à partir du bouton bleu dans le README du Github.
 
 ## 6. Configuration de l’add-on “rclone backup” 
 Ma configuration de Rclone backup est particulière, j'ai dû "tordre" un peu l'addon car il fonctionne de base comme une sauvegarde à des moments fixés d'avance (jours, semaines, mois, années configurées dans un cron). 
