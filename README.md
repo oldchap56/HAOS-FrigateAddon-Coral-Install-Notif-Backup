@@ -114,7 +114,9 @@ Pour cela :
 - créez une Automatisation à l'aide du Blueprint. J'ai mis mon fichier Yaml pour cette Automatidation dans le fichier joint "Détection intrusion & envoi Notification HA"
 
 ![Notification HA-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/51406148-95b9-4608-9c1f-4dfac72a58a3)
+
 Ici la notification sur mon portable de la notication HA.
+
 Mais, ceci ne me suffisait pas car on ne peut a priori envoyer la Notification que sur 1 portable (je n'ai pas réussi à faire un Groupe de portables dans HA).
 Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Telegram (VOIR §8 suivant). Ainsi tous les membres dela famille qui en font partie recevront l'alerte en cas d'intrusion.
 
