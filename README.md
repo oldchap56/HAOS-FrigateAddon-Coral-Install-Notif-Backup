@@ -136,8 +136,6 @@ Ces 2 Automatisations créées à partir d'actions créées dans Alarmo servent 
 Elles servent aussi à faire des essais de réglage en les déclenchant manuellement au lieu de mettre l'alarme (ici exemple où on démarre les détections et les enregistrements en appuyant sur ESSAI)
 ![démarrage détection](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27ca58bb-26c4-4206-86a4-d4c22a7a08c8)
 
-Ici un message arrivant du bot Télégram.
-
 Les 2 actions sont configurées dans Alarmo et le fichier exemple est "Détection démarrage action Alarmoo
  - activation des détections caméras si Alarme armée (sert à faire des essais quand on ve
   - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
