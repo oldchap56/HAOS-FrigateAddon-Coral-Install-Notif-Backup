@@ -66,7 +66,7 @@ Pour cela dans Proxmox :
   ![Coral 2 vision VM HAOS](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/b69e1a73-04cc-4dae-a8ef-49241d6e687e)
 
  
-### dans les 2 cas d'installation vous pouvez passer à l'installation de Frigate, dans le § suivant.
+### !!! Dans les 2 cas d'installation vous pouvez passer à l'installation de Frigate, dans le § suivant.
 
 ## 2. Installation de Frigate add-on
 
@@ -88,6 +88,14 @@ En gros les options choisies permettent à chaque détection d'un humain par Fri
 Ces shapshots et vidéos sont accessibles :
 - soit dans l'interface Frigate, en cliquant sur Events, on a toutes le détections classées chronologiquement,
 - soit dans l'interface Médias, classées par date puis caméra puis à nouveau chronologie.
+
+De même pour vérifier que Coral a bien été reconnu par Frigate, vous pouvez :
+- cliquer sur Frigate dans la barre de gauche,
+- puis aller dans l'onglet "System",
+- et là vous pourrez vérifier que Coral fonctionne bien !!
+
+![Interface Frigate pour voir Coral](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/3f1e4fcc-942f-4fc0-8709-04150a5ef993)
+
   
 ## 4. Intégration de Frigate
 Cette intégration permet d'utiliser les capteurs, évènements etc. de Frigate qui discute en mqtt avec le reste du monde (HAOS, les caméras etc.). C'et ce qui permet de créer des Automatisations à partir de ce qui se passe à l'intérieur de Frigate.
