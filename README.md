@@ -30,6 +30,7 @@ Ceci est d'ailleurs une Version 0 de la documentation, car il y a pas mal de poi
   - activation des détections caméras si Alarme armée (sert aussi à faire des essais quand on veut)
   - désactivation des détections caméras si Alarme désarmée (sert aussi à faire des essais quand on veut)
 ## 1. Branchement de Coral dans la VM HAOS
+### Proposition initiale
 Il y a de multiples tutoriels sur "Comment faire en sorte d'accéder à Coral depuis Frigate", tous basés sur l'intégration à partir du numéro du port USB.
 Ici je vous montre une méthode qui habituellement n'est pas usitée, car j'ai préféré faire une intégration à partir du nom ou de l'ID du composant Coral, en particulier car je ne suis pas un pro de Linux donc j'avais des difficultés à repérer le port USB, l'intégrer à travers l'interface Proxmox, etc.
 Je n'ai  mis qu'une photo car je pense que vous avez déjà dû intégrer des dongle USB à votre Home Assistant OS
@@ -45,6 +46,27 @@ Donc, après avoir branché votre Clé CORAL - avec un cable USB et non directem
 - la première fois pour moi il était vu comme constructeur GOOGLE avec un id
 - après quelques tests de Frigate il avait disparu de la config et il a donc fallu le réinstaller, cette fois ci il n'a pas de nom constructeur il faut l'identifier avec son id (qui a aussi changé)
 - après cette seconde intégration il est stable chez moi et reconnu dans Frigate (on verra plus loin comment en être sûr).
+
+### Proposition plus classique (qu'on retrouve sur des tutoriels divers)
+Il s'agit d'intégrer Coral à partir du numéro de port USB  .... manipulation réussie pour moi en "cassant" la méthode ci-dessus.
+Tout d'abord vous devez identifier les différents dongle USB présents sur votre "serveur HA" (pour moi un NUC).
+Pour cela dans Proxmox :
+- revenir au niveau du noeud sur lequel se trouve votre VM HAOS,
+- sélectionner le shell de ce noeud (pour moi je l'ai appelé Proxmox
+- lancer la commande lsusb, ce qui vous donnera les différents ports utilisés
+
+![Coral 1 lsusb](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/f2a430a9-2583-43cb-a7e8-454c44d914fb)
+- ensuite allez sur l'interface de la VM de HAOS (pour moi la VM 102 - VM Prod), et intégrez Coral comme ci-dessus mais cette fois ci en choisissant "utilisez le port USB", ce qui donne en détail :
+  - aller dans l'interface Proxmox,
+  - cliquer sur votre VM HAOS
+  - aller sur la ligne "Matériel"
+  - cliquer en haut sur "Ajouter", puis "Ajouter périphérique USB"
+  - choisir dans le menu déroulant "Utiliser le port USB"
+  - enfin choisir le péréphérique correspondant à Coral, en cliquant sur la bonne ligne 'pour moi j'ai choisi la ligne 2.6 alors que le lsusb m'avait donnée usb 2 port 5 !!! J'y suis allé par déduction ayant identifié tous les autres dongle/ports USB)
+  ![Coral 2 vision VM HAOS](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/b69e1a73-04cc-4dae-a8ef-49241d6e687e)
+
+ 
+### dans les 2 cas d'installation vous pouvez passer à l'installation de Frigate, dans le § suivant.
 
 ## 2. Installation de Frigate add-on
 
