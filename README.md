@@ -1,6 +1,6 @@
 # HAOS-Frigate-addon-Install-Notif-Backup
 ## AVERTISSEMENT
-### Ce tutoriel est en version "A valider" et n'est pas forcément utilisable en l'état ! J'en ferai une version 1 "validée" dés que possible.
+### Ce tutoriel est en version "A valider"! J'en ferai une version 1 "validée" dés que possible.
 ### [For the english version please click Here go to README_English.md](README_English.md)
 
 ## Introduction
