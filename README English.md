@@ -2,7 +2,7 @@
 ## WARNING
 ### This tutorial is in "To be validated" version and may not be usable as is! I will make a version 1 "validated" as soon as possible.
 
-## ![Pour la version française du tutoriel allez dans README en Français.md en cliquant ici](README.md)
+## [Pour la version française du tutoriel allez dans README en Français.md en cliquant ici](README.md)
 
 ## Introduction
 There is extensive documentation available for installing Frigate in a Container LSX, but I have not found one for installing a Frigate add-on suite, with Backup and notification on smartphones.
