@@ -81,3 +81,92 @@ For that in Proxmox:
 
 From this moment on, you will be able to configure Frigate.
 
+## 3. Construction of the Frigate Configuration
+Since you have Frigate in the sidebar (left for me), that's where we're going to configure it.
+For that, I am attaching my configuration file for you, it is called "Config Frigate addon oldchap56" and the comments are inside. For details on the content I recommend the excellent tutorial from Raynox, which it is derived from, written by Raynox, which you can find on https://www.youtube.com/watch?v=-haxDKIOEao
+
+Basically, the chosen options allow each detection of a human by Frigate (done on the low-resolution stream) to take a snapshot and a video with the high-resolution stream.
+These snapshots and videos are accessible:
+- either in the Frigate interface, by clicking on Events, we have all the detections classified chronologically,
+- either in the Media interface, classified by date then camera then again chronology.
+
+Likewise, to verify that Coral has been recognized by Frigate, you can:
+- click on Frigate in the left sidebar,
+- then go to the "System" tab,
+- and there you can check that Coral is working fine !!
+
+![Frigate Interface to see Coral](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/3f1e4fcc-942f-4fc0-8709-04150a5ef993)
+
+## 4. Integration of Frigate
+This integration allows you to use Frigate's sensors, events, etc. which communicates via mqtt with the rest of the world (HAOS, cameras, etc.). This is what allows you to create Automations based on what happens inside Frigate.
+For the integration, go to HACS (left sidebar), Integrations, click on Custom repositories to include the following link in the Integration category https://github.com/blakeblackshear/frigate-hass-integration.
+Then click on it to install it. [TO BE VALIDATED]
+Note: you can also integrate it directly from the blue button in the Github README.
+
+## 5. Download of the "rclone backup" add-on
+It will be used to export photos and videos of people to Google Drive on the fly.
+Here again you will have to install the link in the repositories (Settings, Add-ons, Add-on Store, Three little dots at the top right, adding (https://github.com/jcwillox/hassio-rclone-backup)
+Then restart HAOS, Add-on store, Add Rclone back-up.
+Note: you can also integrate it directly from the blue button in the Github README.
+
+## 6. Configuration of the "rclone backup" add-on
+My Rclone backup configuration is particular, I had to "bend" the addon a bit because it works by default like a backup at fixed times in advance (days, weeks, months, years configured in a cron).
+My operation consists of restarting Rclone backup with each detection and not once a day.
+The configuration is located in the Configuration part of the addon / Add-on Rclone back-up (tabs at the top), my configuration (accessible in the file "Job for Rclone"). It allows to launch the backup every time the add-on is started (The Automation described in the next § will restart it).
+Job description:
+- no mention of the time of the backup (erased line) to allow a backup each time the add-on is started
+- the command is copyto which copies new files from Frigate to Google Drive every time it is launched (which allows me to manage the files manually in google drive - for example for destruction for example). If you want to automatically synchronize the source (HAOS) and the destination (Google Drive) which will always have the same content, replace it with the rsynch command.
+- source: /media/frigate is where Frigate puts the files by default.
+- destination: google-drive:frigate. frigate is the directory at the root of my google drive where I make my backups.
+-  
+### WARNING: you need to configure access to Google Drive via rclone! 
+For that, you need to obtain from Google Drive for Rclone a client id / client secret (which are created on its application connection API): the complete procedure is on https://rclone.org/drive/#making-your-own-client-id
+
+But, under HAos, I couldn't generate the token which is a third information necessary to connect an application to google drive. So I did (like Ryan72) an rclone installation under Linux (command line with the rclone config command) which worked right away, which allowed me to retrieve the token from the already obtained clientid/client secret.
+I meticulously copied the 3 pieces of information (client id, client secret, token) which allowed me to integrate them later into home assistant in the access configuration of Rclone in the config/rclone.conf file of your HAOS.
+The sample file is named "Rclone.conf"
+If all this worked well you will see that you are connected by clicking on Rclone back-up in the left panel, in particular using the left Explorer menu and "mounting" Google Drive. You should then see all your Gdrive directories in the table. This is proof that everything is well configured for Rclone back-up.
+### Attention again!
+At the beginning we operate from Google with a "test" mode for rclone. I suppose that the token validity period is very short in this mode. I requested a token again and it worked fine right away .... TO BE CONTINUED.
+
+## 7. Creation of an Automation to restart the "Rclone backup" add-on
+This allows you to restart the copy to Gdrive as soon as an event (detection) is generated by Frigate, to have recordings backed up in Google drive fairly quickly after the action (in case for example intruders steal or destroy your HAOS server).
+The automation is in a file of this tutorial under the name "Restart Rclone backup if human detection".
+
+Note: I put a 15-second delay before starting the copy because the videos saved by Frigate in HAOS are cut into 10-second sections, so the copy starts with at least one video to save.
+
+## 8. Configuration of notifications using SgtBatten's blueprint
+Nothing complicated for this, it allows you to receive a notification on your smartphone in case of intrusion with a snapshot and by clicking on it access to the videos through the Home Assistant mobile application.
+For that:
+- go to Settings, Automation, Blueprint and go to get SgtBatten's Frigate Notifications automation.
+- create an Automation using the Blueprint. I put my Yaml file for this Automation in the attached file "Intrusion detection & Notification HA"
+
+![Notification HA-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/51406148-95b9-4608-9c1f-4dfac72a58a3)
+
+Here the notification by HAOS on my phone.
+
+But, this was not enough for me because apparently you can only send the Notification to 1 phone (I couldn't manage to make a Group of phones in HA).
+So, I made another Automation that sends the information to a Telegram bot (SEE §8 next). This way all family members who are part of it will receive the alert in case of intrusion.
+
+## 9. Creation of an Automation to send photos and texts via Telegram_bot
+To do this, you need to have configured a Telegram Bot. If not done I advise you this Youtube tutorial by Maternix (https://www.youtube.com/watch?v=gJpnIslsLqU)
+
+Now that you have configured your Telegram bot and can use it in Home Assistant, all that remains is to create an automation!
+The yaml configuration of this automation is in the attached file "Telegram Frigate Intrusion Notification".
+
+![Telegram bot-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/318790c0-2a7f-4a17-a330-c30a284d9363)
+
+Here a copy of the message sent by HAOS via Telegram on my bot
+
+## 10. Addition in Alarmo of 2 actions linked to alarms:
+These 2 Automations created from actions created in Alarmo are used to activate or not the detections depending on whether the alarm is triggered or not.
+They also serve to do tuning tests by triggering them manually instead of putting the alarm (here example where we start the detections and recordings by pressing TRY)
+![Start detection](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27ca58bb-26c4-4206-86a4-d4c22a7a08c8)
+
+The 2 actions are configured in Alarmo and the example file is "Start detection Alarmo action
+ - activation of camera detections if Alarm armed (used for testing when needed)
+  - deactivation of camera detections if Alarm disarmed (used for testing when needed)
+
+If you do not use Alarmo you will have to directly create an Automation with as trigger the arming of your installation and as action the activation of switch.name_of_your_camera_detect, which is generated by Frigate.
+
+
