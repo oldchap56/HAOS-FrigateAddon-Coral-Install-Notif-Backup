@@ -1,7 +1,7 @@
 # HAOS-Frigate-addon-Install-Notif-Backup
 ## AVERTISSEMENT
 ### Ce tutoriel est en version "A valider" et n'est pas forcément utilisable en l'état ! J'en ferai une version 1 "validée" dés que possible.
-### [For the english version please click Here go to README English.md](README English)
+### [For the english version please click Here go to README English.md](README English.md)
 ## Introduction
 Une grande documentation existe pour installer Frigate dans un Container LSX, mais je n'en ai pas trouvé pour installer une suite Frigate add-on, avec Back-up et notification sur smartphone.
 
