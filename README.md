@@ -67,7 +67,7 @@ Pour cela dans Proxmox :
   ![Coral 2 vision VM HAOS](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/b69e1a73-04cc-4dae-a8ef-49241d6e687e)
 
  
-### !!! Dans les 2 cas d'installation vous pouvez passer à l'installation de Frigate, dans le § suivant.
+### !!! Dans les 2 cas d'installation vous pouvez passer à l'installation de Frigate add-on, dans le § suivant.
 
 ## 2. Installation de Frigate add-on
 
@@ -168,7 +168,7 @@ Elles servent aussi à faire des essais de réglage en les déclenchant manuelle
 ![démarrage détection](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27ca58bb-26c4-4206-86a4-d4c22a7a08c8)
 
 Les 2 actions sont configurées dans Alarmo et le fichier exemple est "Détection démarrage action Alarmoo
- - activation des détections caméras si Alarme armée (sert à faire des essais quand on ve
+ - activation des détections caméras si Alarme armée (sert à faire des essais quand on veut)
   - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
 
 Si vous n'utilisez pas Alarmo vous devrez faire directement une Automatisation avec comme déclencheur la mise sous alarme de votre installation et comme action l'activation de switch.nom_de_votre_caméra_detect, qui est généré par Frigate.
