@@ -13,9 +13,9 @@ Ceci est d'ailleurs une Version 0 de la documentation, car il y a pas mal de poi
 - installé Proxmox
 - intallé HAOS
 - intallé les add-ons suivants : HACS, Mosquitto browser, Alarmo (optionnel)
-- mis en place votre accès extérieur : pour ma part avec les add-ons DuckDNS et NGINX  
+- mis en place votre accès extérieur (optionnel) : pour ma part avec les add-ons DuckDNS et NGINX  
 - testé vos caméras avec le protocole rtsp ou onvif (ou autre mais je n'ai pas testé)
-- avoir configuré un bot Telegram dans HAOS.
+- avoir configuré un bot Telegram dans HAOS (optionnel).
 
 ### Déroulé du tutoriel :
 - Branchement de Coral dans la VM HAOS
@@ -129,6 +129,8 @@ Mais, sous HAos, je n'ai pas réussi à générer le token  qui et une troisièm
 J'ai scrupuleusement copié les 3 informations (client id, client secret, token) ce qui m'a parmis de les integrer ensuite dans home assistant au niveau de la configuration d'accès de Rclone dans le fichier config/rclone.conf de votre HAOS.
 Le fichier en exemple se nomme "Rclone.conf"
 Si tout ça a bien marché vous pourrez voir que vous êtes connectés en cliquant sur Rclone back-up dans le panneau de gauche, en particulier en utilisant le menu de gauche Explorer et en "montant" Google Drive. Vous devez alors voir tous vos répertoires Gdrive dans le tableau. C'est la preuve que tout est bien configuré pour Rclone back-up.
+Nota : après quelques jours, l'accès à Gdrive ne fonctionne plus ... en examinant le token d'accès j'ai vu qu'il avait seulement une journée de validité, mais qu'il y a un Refresh token qui prend je pense sa place ... INVESTIGATIONS EN COURS ... 
+Bref, lorsque ça ne marche plus je reconfigure les accès à Gdrive (en gardant mes id/mot de passe, et le token change, c'est lui que je remets dans rclone.conf et c'est reparti !!!
 ### Re attention !
 Au début on fonctionne vu de Google avec un mode "test" pour rclone. Je suppose que le délai de validité du token est très réduit dans ce mode. J'ai redemandé un token et ça a bien marché tout de suite .... A SUIVRE.
 
@@ -152,7 +154,7 @@ Mais, ceci ne me suffisait pas car on ne peut a priori envoyer la Notification q
 Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Telegram (VOIR §8 suivant). Ainsi tous les membres dela famille qui en font partie recevront l'alerte en cas d'intrusion.
 
 
-## 9. Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
+## 9. Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot (optionnel)
 Pour faire ça il faut avoir configuré un Bot Telegram. Si ce n'est fait je vous conseille ce tutoriel Youtube de Maternix (https://www.youtube.com/watch?v=gJpnIslsLqU)
 
 Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home Assistant, il ne reste plus qu'à faire une automatisation !
@@ -162,7 +164,7 @@ La configuration yaml de cette automatisation se trouve dans le fichier joint "N
 
 Ici une copie du message envoyé par HAOS par Telegram sur mon bot
 
-## 10. Ajout dans Alarmo de 2 actions liées aux alarmes : 
+## 10. Ajout dans Alarmo de 2 actions liées aux alarmes (optionnel)
 Ces 2 Automatisations créées à partir d'actions créées dans Alarmo servent à activer ou non les détections selon que l'alarme est déclenchée ou non.
 Elles servent aussi à faire des essais de réglage en les déclenchant manuellement au lieu de mettre l'alarme (ici exemple où on démarre les détections et les enregistrements en appuyant sur ESSAI)
 ![démarrage détection](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27ca58bb-26c4-4206-86a4-d4c22a7a08c8)
