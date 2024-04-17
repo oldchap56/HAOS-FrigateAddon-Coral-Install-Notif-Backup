@@ -129,7 +129,7 @@ La configuration yaml de cette automatisation se trouve dans le fichier joint "N
 
 ![Telegram bot-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/318790c0-2a7f-4a17-a330-c30a284d9363)
 
-Ici une copie du message envoyé par HAOS par Telegram sur mon bot
+Ici une copie du message envoyé par HAOS par Telegram sur mon bot (il y a aussi une vidéo envoyée au bout de 45 secondes).
 
 ## 7. Ajout dans Alarmo de 2 actions liées aux alarmes (optionnel)
 Ces 2 Automatisations créées à partir d'actions créées dans Alarmo servent à activer ou non les détections selon que l'alarme est déclenchée ou non.
