@@ -19,11 +19,6 @@ action:
         https://XXXX.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
       username: "!secret login"
       password: "!secret mdp"
-      tag: "{{trigger.payload_json[\"after\"][\"id\"]}}"
-      when: "{{trigger.payload_json[\"after\"][\"start_time\"]|int}}"
-      entity_id: |-
-        camera.{{trigger.payload_json["after"]["camera"] | replace("-","_") |
-          lower}}
   - delay:
       hours: 0
       minutes: 0
