@@ -1,5 +1,5 @@
-alias: Notification Telegram Frigate Intrusion
-description: ""
+alias: Notification  Intrusion par Telegram
+description: Envoie message, photo et vidéo à la détection d'un humain par Frigate
 trigger:
   - platform: mqtt
     topic: frigate/events
@@ -16,7 +16,7 @@ action:
     data:
       authentication: digest
       url: >-
-        https://xxxxxxxxx.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
+        https://oldchap56.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
       username: "!secret login"
       password: "!secret mdp"
       tag: "{{trigger.payload_json[\"after\"][\"id\"]}}"
@@ -24,4 +24,15 @@ action:
       entity_id: |-
         camera.{{trigger.payload_json["after"]["camera"] | replace("-","_") |
           lower}}
-mode: parallel
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 45
+      milliseconds: 0
+  - service: telegram_bot.send_video
+    data:
+      authentication: digest
+      url: >-
+        https://oldchap56.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/{{trigger.payload_json["after"]["camera"]}}/clip.mp4
+      username: "!secret login"
+      password: "!secret mdp"
