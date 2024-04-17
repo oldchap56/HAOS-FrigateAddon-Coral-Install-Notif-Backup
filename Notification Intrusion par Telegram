@@ -16,7 +16,7 @@ action:
     data:
       authentication: digest
       url: >-
-        https://oldchap56.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
+        https://XXXX.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/thumbnail.jpg
       username: "!secret login"
       password: "!secret mdp"
       tag: "{{trigger.payload_json[\"after\"][\"id\"]}}"
@@ -33,6 +33,6 @@ action:
     data:
       authentication: digest
       url: >-
-        https://oldchap56.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/{{trigger.payload_json["after"]["camera"]}}/clip.mp4
+        https://XXXX.duckdns.org/api/frigate/notifications/{{trigger.payload_json["after"]["id"]}}/{{trigger.payload_json["after"]["camera"]}}/clip.mp4
       username: "!secret login"
       password: "!secret mdp"
