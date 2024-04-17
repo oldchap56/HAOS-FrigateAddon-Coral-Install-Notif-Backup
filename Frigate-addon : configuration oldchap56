@@ -139,5 +139,5 @@ cameras:
 go2rtc:
   streams:
     back:
-      - ffmpeg:rtsp://adminc210:Ccavokk0!1@192.xxx.xx.xx554/stream2
-      - ffmpeg:rtsp://adminc310:Ccavokk0!1@192.XXX.XXX.XX.XX:554/stream2
+      - ffmpeg:rtsp://adminc210:xxxx@192.xxx.xx.xx554/stream2
+      - ffmpeg:rtsp://adminc310yyyy@192.XXX.XXX.XX.XX:554/stream2
