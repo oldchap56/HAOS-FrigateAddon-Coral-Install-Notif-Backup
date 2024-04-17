@@ -27,10 +27,12 @@ Ceci est d'ailleurs une Version 0 de la documentation, car il y a pas mal de poi
 - Ajout dans Alarmo (ou construction directes par Automatisation) de 2 actions liées aux alarmes : 
   - activation des détections caméras si Alarme armée (sert aussi à faire des essais quand on veut)
   - désactivation des détections caméras si Alarme désarmée (sert aussi à faire des essais quand on veut)
-Et aussi, un essai à moitié réussi de sauvegarde sur Google-drive (problème de perte de droits au bout d'un certain temps - techniquement impossible d'utiliser le token de renouvellement des droits vers google-drive)
+#### Et aussi, un essai à moitié réussi de sauvegarde sur Google-drive :
+Le moitié réussi correspond à un problème de perte de droits au bout d'un certain temps - techniquement impossible d'utiliser le token de renouvellement des droits vers google-drive :
 - Téléchargement de l’add-on “rclone backup” qui va servir à exporter les photos et vidéos de personnes dans google-drive
 - Configuration de l'addon "rclone backup"
-- Construction d’une Automatisation pour relancer l’add-on "Rclone backup" dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite (15 secondes) après l’intrusion
+- Construction d’une Automatisation pour relancer l’add-on "Rclone backup" dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite (15 secondes) après l’intrusion.
+- 
 ## 1. Branchement de Coral dans la VM HAOS
 ### Proposition initiale
 Il y a de multiples tutoriels sur "Comment faire en sorte d'accéder à Coral depuis Frigate", tous basés sur l'intégration à partir du numéro du port USB.
