@@ -142,6 +142,9 @@ Les 2 actions sont configurées dans Alarmo et le fichier exemple est "Détectio
 
 Si vous n'utilisez pas Alarmo vous devrez faire directement une Automatisation avec comme déclencheur la mise sous alarme de votre installation et comme action l'activation de switch.nom_de_votre_caméra_detect, qui est généré par Frigate.
 
+# Ici des mises en place à moitié réussies
+Le moitié réussi correspond à un problème de perte de droits au bout d'un certain temps - techniquement impossible d'utiliser le token de renouvellement des droits vers google-drive :
+
 ## 8. Téléchargement de l’add-on “rclone backup” 
 Il va servir à exporter les photos et vidéos de personnes dans google-drive au fil de l'eau.
 Ici encore il va falloir installer le lien dans les dépôts (Paramètres, Modules complémentaires, Boutiques des modules complémentaires, Trois petits  points en haut à droite, ajout de 
