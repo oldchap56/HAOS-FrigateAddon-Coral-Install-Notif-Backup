@@ -125,7 +125,7 @@ Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Tel
 Pour faire ça il faut avoir configuré un Bot Telegram. Si ce n'est fait je vous conseille ce tutoriel Youtube de Maternix (https://www.youtube.com/watch?v=gJpnIslsLqU)
 
 Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home Assistant, il ne reste plus qu'à faire une automatisation !
-La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Telegram Frigate Intrusion".
+La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Intrusion par Telegram".
 
 ![Telegram bot-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/318790c0-2a7f-4a17-a330-c30a284d9363)
 
