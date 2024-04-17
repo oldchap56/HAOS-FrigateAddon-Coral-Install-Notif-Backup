@@ -22,14 +22,15 @@ Ceci est d'ailleurs une Version 0 de la documentation, car il y a pas mal de poi
 - Installation de Frigate add-on
 - Configuration Frigate
 - Intégration de Frigate (hé oui c'est différent, j'ai eu du mal à comprendre ça)
-- Téléchargement de l’add-on “rclone backup” qui va servir à exporter les photos et vidéos de personnes dans google-drive
-- Configuration de l'addon "rclone backup"
-- Construction d’une Automatisation pour relancer l’add-on "Rclone backup" dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite (15 secondes) après l’intrusion
+- Création d’une Automatisation pour envoyer une notification avec texte, photos et vidéos par Telegram_bot
 - Configuration des notifications à l’aide du blueprint de SgtBatten
-- Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot
 - Ajout dans Alarmo (ou construction directes par Automatisation) de 2 actions liées aux alarmes : 
   - activation des détections caméras si Alarme armée (sert aussi à faire des essais quand on veut)
   - désactivation des détections caméras si Alarme désarmée (sert aussi à faire des essais quand on veut)
+Et aussi, un essai à moitié réussi de sauvegarde sur Google-drive (problème de perte de droits au bout d'un certain temps - techniquement impossible d'utiliser le token de renouvellement des droits vers google-drive)
+- Téléchargement de l’add-on “rclone backup” qui va servir à exporter les photos et vidéos de personnes dans google-drive
+- Configuration de l'addon "rclone backup"
+- Construction d’une Automatisation pour relancer l’add-on "Rclone backup" dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite (15 secondes) après l’intrusion
 ## 1. Branchement de Coral dans la VM HAOS
 ### Proposition initiale
 Il y a de multiples tutoriels sur "Comment faire en sorte d'accéder à Coral depuis Frigate", tous basés sur l'intégration à partir du numéro du port USB.
@@ -105,14 +106,49 @@ https://github.com/blakeblackshear/frigate-hass-integration.
 Ensuite, cliquer dessus pour l'installer. [A VALIDER]
 Nota : on peut aussi l'intégrer directement à partir du bouton bleu dans le README du Github.
 
-## 5. Téléchargement de l’add-on “rclone backup” 
+## 5. Configuration des notifications à l’aide du blueprint de SgtBatten
+Rien de compliqué pour cela, ça vous permet de recevoir sur votre smartphone une notification en cas d'intrusion avec un snapshot et en cliquant dessus l'accès aux vidéos à travers l'application mobile de Home Assistant.
+Pour cela :
+- allez dans Paramètres, Automatisation, Blueprint et allez chercher l'automatisation Frigate Notifications de SgtBatten.
+- créez une Automatisation à l'aide du Blueprint. J'ai mis mon fichier Yaml pour cette Automatidation dans le fichier joint "Détection intrusion & envoi Notification HA"
+
+![Notification HA-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/51406148-95b9-4608-9c1f-4dfac72a58a3)
+
+Ici la notification par HAOS sur mon portable.
+
+Mais, ceci ne me suffisait pas car on ne peut a priori envoyer la Notification que sur 1 portable (je n'ai pas réussi à faire un Groupe de portables dans HA).
+Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Telegram (VOIR §8 suivant). Ainsi tous les membres dela famille qui en font partie recevront l'alerte en cas d'intrusion.
+
+
+## 6. Création d’une Automatisation pour envoyer une notification avec texte, photos et vidéos par Telegram_bot (optionnel)
+Pour faire ça il faut avoir configuré un Bot Telegram. Si ce n'est fait je vous conseille ce tutoriel Youtube de Maternix (https://www.youtube.com/watch?v=gJpnIslsLqU)
+
+Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home Assistant, il ne reste plus qu'à faire une automatisation !
+La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Telegram Frigate Intrusion".
+
+![Telegram bot-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/318790c0-2a7f-4a17-a330-c30a284d9363)
+
+Ici une copie du message envoyé par HAOS par Telegram sur mon bot
+
+## 7. Ajout dans Alarmo de 2 actions liées aux alarmes (optionnel)
+Ces 2 Automatisations créées à partir d'actions créées dans Alarmo servent à activer ou non les détections selon que l'alarme est déclenchée ou non.
+Elles servent aussi à faire des essais de réglage en les déclenchant manuellement au lieu de mettre l'alarme (ici exemple où on démarre les détections et les enregistrements en appuyant sur ESSAI)
+![démarrage détection](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27ca58bb-26c4-4206-86a4-d4c22a7a08c8)
+
+Les 2 actions sont configurées dans Alarmo et le fichier exemple est "Détection démarrage action Alarmoo
+ - activation des détections caméras si Alarme armée (sert à faire des essais quand on veut)
+  - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
+
+Si vous n'utilisez pas Alarmo vous devrez faire directement une Automatisation avec comme déclencheur la mise sous alarme de votre installation et comme action l'activation de switch.nom_de_votre_caméra_detect, qui est généré par Frigate.
+
+## 8. Téléchargement de l’add-on “rclone backup” 
 Il va servir à exporter les photos et vidéos de personnes dans google-drive au fil de l'eau.
 Ici encore il va falloir installer le lien dans les dépôts (Paramètres, Modules complémentaires, Boutiques des modules complémentaires, Trois petits  points en haut à droite, ajout de 
 (https://github.com/jcwillox/hassio-rclone-backup) 
 Puis redémarrage de HAOS, Boutique de modules complémentaires, Ajouter Rclone back-up.
 Nota : on peut aussi l'intégrer directement à partir du bouton bleu dans le README du Github.
 
-## 6. Configuration de l’add-on “rclone backup” 
+## 9. Configuration de l’add-on “rclone backup” 
 Ma configuration de Rclone backup est particulière, j'ai dû "tordre" un peu l'addon car il fonctionne de base comme une sauvegarde à des moments fixés d'avance (jours, semaines, mois, années configurées dans un cron). 
 Mon fonctionnement consiste à redémarrer Rclone back up à chaque détection et non une fois tous les jours.
 La configuration est située dans la partie Configuration de l'addon/Module complémentaire Rclone back-up (onglets en haut) , ma configuration (accessible dans le fichier "Job pour Rclone"). Elle permet de lancer le backup à chaque démarrage de l'add-on (L'automatisation décrite dans le § suivant permettra de le relancer).
@@ -132,47 +168,10 @@ Si tout ça a bien marché vous pourrez voir que vous êtes connectés en cliqua
 Nota : après quelques jours, l'accès à Gdrive ne fonctionne plus ... en examinant le token d'accès j'ai vu qu'il avait seulement une journée de validité, mais qu'il y a un Refresh token qui prend je pense sa place ... INVESTIGATIONS EN COURS ... 
 Bref, lorsque ça ne marche plus je reconfigure les accès à Gdrive (en gardant mes id/mot de passe, et le token change, c'est lui que je remets dans rclone.conf et c'est reparti !!!
 ### Re attention !
-Au début on fonctionne vu de Google avec un mode "test" pour rclone. Je suppose que le délai de validité du token est très réduit dans ce mode. J'ai redemandé un token et ça a bien marché tout de suite .... A SUIVRE.
+Après bien des essais, je n'ai pas réussi à faire en sorte que le Refresh Token soit efficace pour le rclone installé par rclone back-up. C'est pourqoi j'ai introduit dans l'automatisation Telegram l'envoi de la vidéo Frigate au bout de 45 secondes (pour permettre d'avoir une vidéo assez longue).
 
-## 7. Construction d’une Automatisation pour relancer l’add-on "Rclone backup"
+## 10. Construction d’une Automatisation pour relancer l’add-on "Rclone backup"
 Ceci permet de relancer la copie vers Gdrive dès qu’un évènement (détection) est généré par Frigate, pour avoir des enregistrements sauvegardés dans Google drive assez vite après l’action (au cas où par exemple les intrus volent ou détruisent votre serveur HAOS).
 L'automatisation est dans un fichier de ce tutoriel sous le nom "Redémarrage Rclone backup si détection humain".
 
 Remarque :  j'ai mis 15 secondes de temporisation avant de démarrer la copie car les vidéos sauvegardées par Frigate dans HAOS sont découpées en tronçons de 10 secondes, comme ça la copie démarre avec au moins une vidéo à sauvegarder.
-
-## 8. Configuration des notifications à l’aide du blueprint de SgtBatten
-Rien de compliqué pour cela, ça vous permet de recevoir sur votre smartphone une notification en cas d'intrusion avec un snapshot et en cliquant dessus l'accès aux vidéos à travers l'application mobile de Home Assistant.
-Pour cela :
-- allez dans Paramètres, Automatisation, Blueprint et allez chercher l'automatisation Frigate Notifications de SgtBatten.
-- créez une Automatisation à l'aide du Blueprint. J'ai mis mon fichier Yaml pour cette Automatidation dans le fichier joint "Détection intrusion & envoi Notification HA"
-
-![Notification HA-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/51406148-95b9-4608-9c1f-4dfac72a58a3)
-
-Ici la notification par HAOS sur mon portable.
-
-Mais, ceci ne me suffisait pas car on ne peut a priori envoyer la Notification que sur 1 portable (je n'ai pas réussi à faire un Groupe de portables dans HA).
-Donc, j'ai fait une autre Automatisation qui envoie l'information sur un bot Telegram (VOIR §8 suivant). Ainsi tous les membres dela famille qui en font partie recevront l'alerte en cas d'intrusion.
-
-
-## 9. Création d’une Automatisation pour envoyer des photos et textes par Telegram_bot (optionnel)
-Pour faire ça il faut avoir configuré un Bot Telegram. Si ce n'est fait je vous conseille ce tutoriel Youtube de Maternix (https://www.youtube.com/watch?v=gJpnIslsLqU)
-
-Maintenant que vous avez votre bot Telegram configuré et utilisable dans Home Assistant, il ne reste plus qu'à faire une automatisation !
-La configuration yaml de cette automatisation se trouve dans le fichier joint "Notification Telegram Frigate Intrusion".
-
-![Telegram bot-BD](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/318790c0-2a7f-4a17-a330-c30a284d9363)
-
-Ici une copie du message envoyé par HAOS par Telegram sur mon bot
-
-## 10. Ajout dans Alarmo de 2 actions liées aux alarmes (optionnel)
-Ces 2 Automatisations créées à partir d'actions créées dans Alarmo servent à activer ou non les détections selon que l'alarme est déclenchée ou non.
-Elles servent aussi à faire des essais de réglage en les déclenchant manuellement au lieu de mettre l'alarme (ici exemple où on démarre les détections et les enregistrements en appuyant sur ESSAI)
-![démarrage détection](https://github.com/oldchap56/HAOS-FrigateAddon-Coral-Install-Notif-Backup/assets/153823477/27ca58bb-26c4-4206-86a4-d4c22a7a08c8)
-
-Les 2 actions sont configurées dans Alarmo et le fichier exemple est "Détection démarrage action Alarmoo
- - activation des détections caméras si Alarme armée (sert à faire des essais quand on veut)
-  - désactivation des détections caméras si Alarme désarmée (sert à faire des essais quand on veut)
-
-Si vous n'utilisez pas Alarmo vous devrez faire directement une Automatisation avec comme déclencheur la mise sous alarme de votre installation et comme action l'activation de switch.nom_de_votre_caméra_detect, qui est généré par Frigate.
-
-
