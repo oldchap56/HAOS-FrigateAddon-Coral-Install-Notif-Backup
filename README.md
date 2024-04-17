@@ -101,7 +101,7 @@ De même pour vérifier que Coral a bien été reconnu par Frigate, vous pouvez 
 
   
 ## 4. Intégration de Frigate
-Cette intégration permet d'utiliser les capteurs, évènements etc. de Frigate qui discute en mqtt avec le reste du monde (HAOS, les caméras etc.). C'et ce qui permet de créer des Automatisations à partir de ce qui se passe à l'intérieur de Frigate.
+Cette intégration est OBLIGATOIRE et permet d'utiliser les capteurs, évènements etc. de Frigate qui discute en mqtt avec le reste du monde (HAOS, les caméras etc.). C'et ce qui permet de créer des Automatisations à partir de ce qui se passe à l'intérieur de Frigate.
 Pour l'intégration, il faut aller dans HACS (barre de gauche), Intégrations, cliquer sur Dépots personnalisés pour inclure le lien suivant dans la catégorie Intégration
 https://github.com/blakeblackshear/frigate-hass-integration.
 Ensuite, cliquer dessus pour l'installer.
